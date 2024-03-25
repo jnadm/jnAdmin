@@ -6,7 +6,7 @@
 
 二、后端：
 1、环境部署：
-   php最少8.1及以上版本，可以使用phpstudy部署环境，下载地址：https://www.xp.cn/download.html;
+   php最少8.1及以上版本，可以使用phpstudy部署环境；
 2、数据库安装：
    环境部署后，新建mysql库，比如jnadmin，导入根目录下sql文件，修改laravel目录下.env数据库相关的配置文件;
    或者使用laravel数据迁移进行操作：
