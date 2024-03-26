@@ -23,9 +23,9 @@ return new class extends Migration
             $table->string('field_name', 255)->comment('使用附件的字段名');
             $table->unsignedInteger('created_id')->default(0)->comment('创建人');
             $table->unsignedInteger('updated_id')->default(0)->comment('修改人');
-            $table->timestamp('created_at')->comment('创建时间');
-            $table->timestamp('updated_at')->comment('更新时间');
-            $table->softDeletes($column = 'deleted_at');
+            $table->dateTime('created_at')->comment('创建时间');
+            $table->dateTime('updated_at')->comment('更新时间');
+            $table->dateTime('deleted_at')->nullable()->comment('删除时间');
             $table->comment('附件存储表');
         });
     }
