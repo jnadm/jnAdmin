@@ -1,7 +1,7 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : 118.25.149.111
+ Source Server         : jia
  Source Server Type    : MySQL
  Source Server Version : 80033
  Source Host           : 118.25.149.111:3306
@@ -11,7 +11,7 @@
  Target Server Version : 80033
  File Encoding         : 65001
 
- Date: 25/03/2024 08:18:21
+ Date: 26/03/2024 09:31:01
 */
 
 SET NAMES utf8mb4;
@@ -38,16 +38,16 @@ CREATE TABLE `sys_admin`  (
   `login_ip` smallint(0) UNSIGNED NOT NULL DEFAULT 0 COMMENT '登录ip',
   `created_id` int(0) UNSIGNED NOT NULL DEFAULT 0 COMMENT '创建人',
   `updated_id` int(0) UNSIGNED NOT NULL DEFAULT 0 COMMENT '修改人',
-  `created_at` timestamp(0) NOT NULL COMMENT '创建时间',
-  `updated_at` timestamp(0) NOT NULL COMMENT '更新时间',
-  `deleted_at` timestamp(0) NULL DEFAULT NULL,
+  `created_at` datetime(0) NOT NULL COMMENT '创建时间',
+  `updated_at` datetime(0) NOT NULL COMMENT '更新时间',
+  `deleted_at` datetime(0) NULL DEFAULT NULL COMMENT '删除时间',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '管理员表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of sys_admin
 -- ----------------------------
-INSERT INTO `sys_admin` VALUES (1, 'admin', '33b1d98bb7a4b754caf9da0085b1e5d9', 'a@&*7', '16666666666', 1, '超级管理员', '超级管理员', 0, '', 1, 0, 1711294063, 0, 0, 1, '2024-02-10 00:00:00', '2024-03-24 23:27:43', NULL);
+INSERT INTO `sys_admin` VALUES (1, 'admin', '11f685143271aa5beaae4dcd58566d86', 'a@&*6', '16666666666', 1, '超级管理员', '超级管理员', 0, '', 1, 0, 0, 0, 0, 0, '2024-02-10 00:00:00', '2024-02-10 00:00:00', NULL);
 
 -- ----------------------------
 -- Table structure for sys_file
@@ -65,9 +65,9 @@ CREATE TABLE `sys_file`  (
   `field_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '使用附件的字段名',
   `created_id` int(0) UNSIGNED NOT NULL DEFAULT 0 COMMENT '创建人',
   `updated_id` int(0) UNSIGNED NOT NULL DEFAULT 0 COMMENT '修改人',
-  `created_at` timestamp(0) NOT NULL COMMENT '创建时间',
-  `updated_at` timestamp(0) NOT NULL COMMENT '更新时间',
-  `deleted_at` timestamp(0) NULL DEFAULT NULL,
+  `created_at` datetime(0) NOT NULL COMMENT '创建时间',
+  `updated_at` datetime(0) NOT NULL COMMENT '更新时间',
+  `deleted_at` datetime(0) NULL DEFAULT NULL COMMENT '删除时间',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '附件存储表' ROW_FORMAT = Dynamic;
 
@@ -93,9 +93,9 @@ CREATE TABLE `sys_menu`  (
   `sort` int(0) NOT NULL DEFAULT 0 COMMENT '排序号',
   `created_id` int(0) UNSIGNED NOT NULL DEFAULT 0 COMMENT '创建人',
   `updated_id` int(0) UNSIGNED NOT NULL DEFAULT 0 COMMENT '修改人',
-  `created_at` timestamp(0) NOT NULL COMMENT '创建时间',
-  `updated_at` timestamp(0) NOT NULL COMMENT '更新时间',
-  `deleted_at` timestamp(0) NULL DEFAULT NULL,
+  `created_at` datetime(0) NOT NULL COMMENT '创建时间',
+  `updated_at` datetime(0) NOT NULL COMMENT '更新时间',
+  `deleted_at` datetime(0) NULL DEFAULT NULL COMMENT '删除时间',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '菜单表' ROW_FORMAT = Dynamic;
 
@@ -116,9 +116,9 @@ CREATE TABLE `sys_permission`  (
   `menu_codes` json NOT NULL COMMENT '权限内容',
   `created_id` int(0) UNSIGNED NOT NULL DEFAULT 0 COMMENT '创建人',
   `updated_id` int(0) UNSIGNED NOT NULL DEFAULT 0 COMMENT '修改人',
-  `created_at` timestamp(0) NOT NULL COMMENT '创建时间',
-  `updated_at` timestamp(0) NOT NULL COMMENT '更新时间',
-  `deleted_at` timestamp(0) NULL DEFAULT NULL,
+  `created_at` datetime(0) NOT NULL COMMENT '创建时间',
+  `updated_at` datetime(0) NOT NULL COMMENT '更新时间',
+  `deleted_at` datetime(0) NULL DEFAULT NULL COMMENT '删除时间',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '权限表' ROW_FORMAT = Dynamic;
 
@@ -137,9 +137,9 @@ CREATE TABLE `sys_role`  (
   `sort` tinyint(0) NOT NULL DEFAULT 0 COMMENT '序号',
   `created_id` int(0) UNSIGNED NOT NULL DEFAULT 0 COMMENT '创建人',
   `updated_id` int(0) UNSIGNED NOT NULL DEFAULT 0 COMMENT '修改人',
-  `created_at` timestamp(0) NOT NULL COMMENT '创建时间',
-  `updated_at` timestamp(0) NOT NULL COMMENT '更新时间',
-  `deleted_at` timestamp(0) NULL DEFAULT NULL,
+  `created_at` datetime(0) NOT NULL COMMENT '创建时间',
+  `updated_at` datetime(0) NOT NULL COMMENT '更新时间',
+  `deleted_at` datetime(0) NULL DEFAULT NULL COMMENT '删除时间',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '角色表' ROW_FORMAT = Dynamic;
 
@@ -158,9 +158,9 @@ CREATE TABLE `sys_role_admin`  (
   `admin_id` int(0) UNSIGNED NOT NULL DEFAULT 0 COMMENT '管理员id',
   `created_id` int(0) UNSIGNED NOT NULL DEFAULT 0 COMMENT '创建人',
   `updated_id` int(0) UNSIGNED NOT NULL DEFAULT 0 COMMENT '修改人',
-  `created_at` timestamp(0) NOT NULL COMMENT '创建时间',
-  `updated_at` timestamp(0) NOT NULL COMMENT '更新时间',
-  `deleted_at` timestamp(0) NULL DEFAULT NULL,
+  `created_at` datetime(0) NOT NULL COMMENT '创建时间',
+  `updated_at` datetime(0) NOT NULL COMMENT '更新时间',
+  `deleted_at` datetime(0) NULL DEFAULT NULL COMMENT '删除时间',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '角色管理员关联表' ROW_FORMAT = Dynamic;
 
@@ -179,9 +179,9 @@ CREATE TABLE `sys_role_permission`  (
   `permission_id` int(0) UNSIGNED NOT NULL DEFAULT 0 COMMENT '权限id',
   `created_id` int(0) UNSIGNED NOT NULL DEFAULT 0 COMMENT '创建人',
   `updated_id` int(0) UNSIGNED NOT NULL DEFAULT 0 COMMENT '修改人',
-  `created_at` timestamp(0) NOT NULL COMMENT '创建时间',
-  `updated_at` timestamp(0) NOT NULL COMMENT '更新时间',
-  `deleted_at` timestamp(0) NULL DEFAULT NULL,
+  `created_at` datetime(0) NOT NULL COMMENT '创建时间',
+  `updated_at` datetime(0) NOT NULL COMMENT '更新时间',
+  `deleted_at` datetime(0) NULL DEFAULT NULL COMMENT '删除时间',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '角色权限关联表' ROW_FORMAT = Dynamic;
 
